@@ -68,7 +68,7 @@ public class Anagrams extends JFrame {
             dcbm.addElement(library);
         }
         
-        jComboBox1.setModel(dcbm);
+        category.setModel(dcbm);
                 
         getRootPane().setDefaultButton(guessButton);
         pack();
@@ -78,6 +78,9 @@ public class Anagrams extends JFrame {
         Dimension frameSize = getSize();
         setLocation(new Point((screenSize.width - frameSize.width) / 2,
                               (screenSize.height - frameSize.width) / 2));
+        
+        WordLibrary wordLibrary = (WordLibrary) dcbm.getSelectedItem();
+        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));        
     }
     
     /** This method is called from within the constructor to
@@ -98,7 +101,7 @@ public class Anagrams extends JFrame {
         buttonsPanel = new javax.swing.JPanel();
         guessButton = new javax.swing.JButton();
         nextTrial = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        category = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         mainMenu = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -209,14 +212,19 @@ public class Anagrams extends JFrame {
         gridBagConstraints.weighty = 1.0;
         mainPanel.add(buttonsPanel, gridBagConstraints);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        category.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                categoryActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipady = 6;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 12, 6);
-        mainPanel.add(jComboBox1, gridBagConstraints);
+        mainPanel.add(category, gridBagConstraints);
 
         jLabel1.setText("Category:");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -299,16 +307,21 @@ public class Anagrams extends JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitForm
 
+    private void categoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoryActionPerformed
+        WordLibrary wordLibrary = (WordLibrary) dcbm.getSelectedItem();
+        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));
+    }//GEN-LAST:event_categoryActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JPanel buttonsPanel;
+    private javax.swing.JComboBox<String> category;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JLabel feedbackLabel;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JButton guessButton;
     private javax.swing.JLabel guessLabel;
     private javax.swing.JTextField guessedWord;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar mainMenu;
     private javax.swing.JPanel mainPanel;
