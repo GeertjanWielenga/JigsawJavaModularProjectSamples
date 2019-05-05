@@ -1,1 +1,1 @@
-<img src="images/openjfx-jdk12.png"></img>
+<img src="../images/openjfx-jdk12.png"></img>
