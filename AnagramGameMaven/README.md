@@ -1,8 +1,5 @@
-# Jigsaw Java Modular Project Samples
+# Modular Maven Anagram Game
 
-Java SE projects demonstrating Jigsaw usage.
-
-<p>Services sample discussed at <a href="http://openjdk.java.net/projects/jigsaw/quick-start#services">http://openjdk.java.net/projects/jigsaw/quick-start#services</a>:</p>
-<img src="images/servicesample.png"></img>
-<p>NetBeans Anagram Game sample as a multimodular project, as discussed at <a href="https://blogs.oracle.com/geertjan/entry/getting_further_modulerizing_with_jigsaw">https://blogs.oracle.com/geertjan/entry/getting_further_modulerizing_with_jigsaw</a>:</p>
-<img src="images/anagramgamesample.png"></img>
+A full example showing usage of --module-path in nbactions.xml of 'com.toy.anagram', consisting of three Jigsaw/Maven modules, i.e.,
+with module-info.java and POM.xml in each of the three projects, setting dependencies between them. The result is a Java Swing
+Anagram Game (com.toy.anagram) that loads services of com.wordlibrary, for example, org.wordlibrary.animal.
