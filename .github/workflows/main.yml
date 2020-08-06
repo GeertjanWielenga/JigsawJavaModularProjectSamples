@@ -14,7 +14,7 @@ jobs:
     - uses: actions/setup-java@v1
       with:
         java-version: ${{matrix.java}} 
-    - run: ant -buildfile AnagramGame/build.xml jar
+    - run: ant -buildfile AnagramGame/build.xml run
     - run: ant -buildfile ServiceSample/build.xml run  
       
    
