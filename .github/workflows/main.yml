@@ -12,12 +12,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: java -version
-    - name: Set up JDKs
     - uses: actions/setup-java@v1
       with:
         java-version: ${{matrix.java}}  
     - run: java -version
-    - name: Build with Ant
+    - uses: actions/setup-java@v1
+      with:
+        java-version: ${{matrix.java}} 
     - run: ant -noinput -buildfile AnagramGame/build.xml
       
    
