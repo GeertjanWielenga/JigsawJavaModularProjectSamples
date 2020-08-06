@@ -14,12 +14,14 @@ jobs:
     - uses: actions/setup-java@v1
       with:
         java-version: ${{matrix.java}} 
+    - uses: actions/cache@v1
+       with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2      
     - run: ant -buildfile AnagramGame/build.xml jar
     - run: ant -buildfile ServiceSample/build.xml jar
     - run: mvn -B package --file JavaFX/HelloFX/pom.xml  
-    - run: mvn -B package --file AnagramGameMaven/com.wordlibrary/pom.xml 
-    - run: mvn -B package --file AnagramGameMaven/org.wordlibrary.animal/pom.xml  
-    - run: mvn -B package --file AnagramGameMaven/org.wordlibrary.names/pom.xml  
     - run: mvn -B package --file AnagramGameMaven/com.toy.anagram/pom.xml  
  
   
