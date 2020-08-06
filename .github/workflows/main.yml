@@ -15,6 +15,7 @@ jobs:
       with:
         java-version: ${{matrix.java}} 
     - run: ant -buildfile AnagramGame/build.xml jar
-    - run: ant -buildfile ServiceSample/build.xml jar  
+    - run: ant -buildfile ServiceSample/build.xml jar
+    - run: mvn -B package --file JavaFX/HelloFX/pom.xml  
       
    
