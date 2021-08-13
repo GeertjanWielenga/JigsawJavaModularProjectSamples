@@ -1,4 +1,5 @@
 # Jigsaw Java Modular Project Samples
+<img align="right" width="120" height="120" src="https://github.com/geertjanw/jmn/blob/master/www/WorksWithOpenJDK1.png">
 
 Java SE projects demonstrating Jigsaw usage.
 
