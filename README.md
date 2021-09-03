@@ -1,3 +1,5 @@
+<img align="right" src="https://github.com/foojayio/badges/raw/main/works_with_openjdk/Works-with-OpenJDK.png" width="100">
+
 # Jigsaw Java Modular Project Samples
 [![Java CI](https://github.com/hdrhistogram/hdrhistogram/workflows/Java%20CI/badge.svg)](https://github.com/GeertjanWielenga/JigsawJavaModularProjectSamples/actions)
 
